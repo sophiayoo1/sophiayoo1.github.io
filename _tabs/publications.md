@@ -18,7 +18,7 @@ order: 2
 
 
 
-### On the Criticality of Integrity Protection in 5G Fronthaul Networks {#5g}
+### On the Criticality of Integrity Protection in 5G Fronthaul Networks {#frontstorm}
 **Sophia Yoo\***, Jiarong Xing\*, Xenofon Foukas, Daehyeok Kim, Michael K. Reiter  
 *USENIX Security 2024*  
 <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
