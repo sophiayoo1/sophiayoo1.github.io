@@ -6,7 +6,8 @@ order: 1
 ---
 
 
-I am a **network security researcher** who designs and builds **practical systems that deliver security and privacy on today’s networks without sacrificing performance**. Most existing solutions treat the Internet as a black box, adding protections on top that slow applications or demand tech-savvy users. In contrast, my work pushes security functions *into the network itself* and uses **hardware–software co-design** to make defenses scalable, performant, and deployable today. My research philosophy is guided by three principles:  
+<!-- I am a **network security researcher** who designs and builds **practical systems that deliver security and privacy on today’s networks without sacrificing performance**.  -->
+My research develops *practical systems* that bring **security and privacy to real-world networks—without compromising performance**. Most existing solutions treat the Internet as a black box, adding protections on top that slow applications or demand tech-savvy users. In contrast, my work pushes security functions *into the network itself* and uses **hardware–software co-design** to make defenses scalable, performant, and deployable today. My research philosophy is guided by three principles:  
 
 (i) security and privacy functions should run *in-network* or be natively **network-aware**,  
 (ii) **hardware–software co-design** is essential for scalable defenses, and  
