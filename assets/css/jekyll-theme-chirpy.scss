@@ -9,3 +9,17 @@
 ';
 
 /* append your custom style below */
+
+// /* make all link underlines blue */
+// a {
+//   text-decoration-color: #0d6efd; /* same blue as Bootstrap primary, adjust as needed */
+// }
+
+/* or only within your research page content */
+.page-content a {
+  text-decoration-color: #0d6efd;
+}
+
+// a {
+//   text-decoration-color: currentColor;
+// }
