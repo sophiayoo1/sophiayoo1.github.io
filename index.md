@@ -55,8 +55,105 @@ icon: fas fa-home
   {{ content | markdownify }}
 </section>
 
-
 {% raw %}
+<style>
+/* make the highlight visible */
+a.active { font-weight: 700; text-decoration: underline; }
+</style>
+
+<script>
+window.addEventListener("load", function () {
+  const ORDER = ["home","research","publications","cv","interests"];
+  const ALIAS = {
+    "home":"home", "welcome":"home", "", "home",
+    "research":"research",
+    "publications":"publications",
+    "cv":"cv",
+    "interests":"interests",
+    "out-of-band-interests":"interests"
+  };
+
+  function idFromLink(a) {
+    const raw = a.getAttribute("href") || "";
+    try {
+      const u = new URL(raw, location.href);
+
+      // 1) Hash-based links (#research, /#research, /repo/#research)
+      if (u.hash) {
+        const id = u.hash.slice(1).toLowerCase();
+        if (ORDER.includes(id)) return id;
+      }
+
+      // 2) Chirpy tab-style links (/Research/, /Publications/, etc.)
+      const segs = u.pathname.replace(/\/+/g,'/').split('/').filter(Boolean);
+      // last segment or '' for "/"
+      const last = (segs[segs.length-1] || "").toLowerCase();
+      if (ALIAS[last]) return ALIAS[last];
+
+      // 3) Root "/" -> home
+      if (u.pathname === "/") return "home";
+    } catch (e) {}
+    return null;
+  }
+
+  // Build section<->link pairs
+  const linkById = new Map();
+  Array.from(document.querySelectorAll("a[href]")).forEach(a => {
+    const id = idFromLink(a);
+    if (id && ORDER.includes(id) && !linkById.has(id)) linkById.set(id, a);
+  });
+
+  const items = ORDER.map(id => {
+    const section = document.getElementById(id);
+    const link = linkById.get(id);
+    return (section && link) ? { id, section, link } : null;
+  }).filter(Boolean);
+
+  if (!items.length) return;
+
+  const OFFSET = 100;
+  const setActive = idxOrId => {
+    let targetId = typeof idxOrId === "number" ? items[idxOrId].id : idxOrId;
+    items.forEach(({ id, link }) => link.classList.toggle("active", id === targetId));
+  };
+
+  function updateActive() {
+    const y = window.scrollY || window.pageYOffset;
+    const docH = document.documentElement.scrollHeight;
+    const winH = window.innerHeight;
+
+    if (y + winH >= docH - 2) { setActive(items[items.length - 1].id); return; }
+
+    let idx = 0;
+    for (let i = 0; i < items.length; i++) {
+      if (y >= (items[i].section.offsetTop - OFFSET)) idx = i; else break;
+    }
+    setActive(idx);
+  }
+
+  // Intercept clicks on nav links that map to our sections (including /Research/)
+  items.forEach(({ link, id, section }) => {
+    link.addEventListener("click", e => {
+      const idMapped = idFromLink(link);
+      if (idMapped) {
+        e.preventDefault();
+        window.scrollTo({ top: section.offsetTop - (OFFSET - 1), behavior: "smooth" });
+        history.replaceState(null, "", "#" + id);
+        setActive(id);
+      }
+    });
+  });
+
+  updateActive();
+  window.addEventListener("scroll", updateActive, { passive: true });
+  window.addEventListener("resize", updateActive);
+});
+</script>
+{% endraw %}
+
+
+
+<!-- {% raw %}
 <script>
 // document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("load", function () {
@@ -121,7 +218,7 @@ window.addEventListener("load", function () {
 </script>
 {% endraw %}
 
-
+ -->
 
 <!-- 
 
