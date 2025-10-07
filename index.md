@@ -55,52 +55,57 @@ icon: fas fa-home
   {{ content | markdownify }}
 </section>
 
+
 {% raw %}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Chirpy-compatible selector for sidebar links
-  const rawLinks = Array.from(document.querySelectorAll(".sidebar a.nav-link, .nav-item a.nav-link"));
+  // Sections in scroll order (IDs must match your <section id="...">)
+  const ORDER = ["home","research","publications","cv","interests"];
 
-  // Map "/" to #home
-  const items = rawLinks.map(link => {
-    const href = link.getAttribute("href") || "";
-    let id = null;
-    if (href.includes("#")) id = href.split("#")[1];
-    else if (href === "/" || href.endsWith("/")) id = "home";
-    const section = id ? document.getElementById(id) : null;
-    return section ? { link, id, section } : null;
+  // Find the sidebar links by href, not by class names
+  const anchors = Array.from(document.querySelectorAll("a[href]"));
+  const linkById = new Map();
+
+  anchors.forEach(a => {
+    const href = a.getAttribute("href") || "";
+    if (href === "/" || href === "") { linkById.set("home", a); return; }
+    const m = href.match(/#([A-Za-z0-9\-_]+)/);
+    if (m && ORDER.includes(m[1]) && !linkById.has(m[1])) {
+      linkById.set(m[1], a);
+    }
+  });
+
+  const items = ORDER.map(id => {
+    const section = document.getElementById(id);
+    const link = linkById.get(id);
+    return (section && link) ? { id, section, link } : null;
   }).filter(Boolean);
 
-  if (items.length === 0) return; // no sections found
+  if (items.length === 0) return;
 
   const OFFSET = 100;
-  const setActive = idx =>
-    items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
+  const setActive = idx => items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
 
   function updateActive() {
-    const scrollY = window.scrollY || window.pageYOffset;
+    const y = window.scrollY || window.pageYOffset;
     const docH = document.documentElement.scrollHeight;
     const winH = window.innerHeight;
 
-    // Bottom → last section active
-    if (scrollY + winH >= docH - 2) return setActive(items.length - 1);
+    if (y + winH >= docH - 2) { setActive(items.length - 1); return; }
+    if (y <= items[0].section.offsetTop + 200) { setActive(0); return; }
 
-    // Top → Home
-    if (scrollY <= items[0].section.offsetTop + 200) return setActive(0);
-
-    // Otherwise → nearest section
     let idx = 0;
     for (let i = 0; i < items.length; i++) {
-      if (scrollY >= (items[i].section.offsetTop - OFFSET)) idx = i; else break;
+      if (y >= (items[i].section.offsetTop - OFFSET)) idx = i; else break;
     }
     setActive(idx);
   }
 
-  // Smooth scroll
+  // Smooth scroll + keep URL hash consistent
   items.forEach(({ link, id, section }) => {
     link.addEventListener("click", e => {
       const href = link.getAttribute("href") || "";
-      if (href === "/" || href.startsWith("/#")) {
+      if (href === "/" || href.startsWith("/#") || href.startsWith("#")) {
         e.preventDefault();
         window.scrollTo({ top: section.offsetTop - (OFFSET - 1), behavior: "smooth" });
         history.replaceState(null, "", "/#" + id);
