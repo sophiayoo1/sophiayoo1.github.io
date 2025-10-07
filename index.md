@@ -63,52 +63,49 @@ window.addEventListener("load", () => {
   const SECTIONS = ["home","research","publications","cv","interests"];
   const OFFSET = 100;
 
-  // Build mapping: section id -> nav link
+  // Map section IDs to sidebar links
   const linkById = new Map();
-  document.querySelectorAll("a[href]").forEach(a => {
+  document.querySelectorAll("a.nav-link[href]").forEach(a => {
     const href = a.getAttribute("href") || "";
-    if (href === "/" || href.endsWith("/index.html")) {
+    if (href === "/" || href === "/#home") {
       linkById.set("home", a);
       return;
     }
-    const match = href.match(/#([A-Za-z0-9\-_]+)/);
-    if (match && SECTIONS.includes(match[1])) linkById.set(match[1], a);
+    const m = href.match(/^\/#([A-Za-z0-9\-_]+)/);
+    if (m && SECTIONS.includes(m[1])) linkById.set(m[1], a);
   });
 
   const items = SECTIONS.map(id => {
-    const section = document.getElementById(id);
+    const sec = document.getElementById(id);
     const link = linkById.get(id);
-    return section && link ? {id, section, link} : null;
+    return (sec && link) ? {id, sec, link} : null;
   }).filter(Boolean);
 
   if (!items.length) return;
 
-  function setActive(id) {
+  const setActive = id =>
     items.forEach(({id: i, link}) => link.classList.toggle("active", i === id));
-  }
 
   function updateActive() {
     const y = window.scrollY;
     const bottom = y + window.innerHeight >= document.documentElement.scrollHeight - 2;
     if (bottom) return setActive(items.at(-1).id);
+
     let current = items[0].id;
     for (const it of items) {
-      if (y >= it.section.offsetTop - OFFSET) current = it.id;
+      if (y >= it.sec.offsetTop - OFFSET) current = it.id;
       else break;
     }
     setActive(current);
   }
 
-  // Smooth scroll & URL hash update
-  items.forEach(({link,section,id}) => {
+  // Smooth scroll on click + update URL
+  items.forEach(({link,sec,id}) => {
     link.addEventListener("click", e => {
-      const href = link.getAttribute("href") || "";
-      if (href === "/" || href.startsWith("/#") || href.startsWith("#")) {
-        e.preventDefault();
-        window.scrollTo({top: section.offsetTop - (OFFSET - 1), behavior: "smooth"});
-        history.replaceState(null, "", "#" + id);
-        setActive(id);
-      }
+      e.preventDefault();
+      window.scrollTo({top: sec.offsetTop - (OFFSET - 1), behavior: "smooth"});
+      history.replaceState(null, "", "/#" + id);
+      setActive(id);
     });
   });
 
@@ -118,6 +115,7 @@ window.addEventListener("load", () => {
 });
 </script>
 {% endraw %}
+
 
 
 

@@ -69,3 +69,10 @@ section {
 .nav-item > a.nav-link.active:hover {
   background-color: #0b5ed7 !important;
 }
+
+<style>
+.nav-link.active span {
+  color: var(--link-hover-color, #007acc);
+  font-weight: 700;
+}
+</style>
