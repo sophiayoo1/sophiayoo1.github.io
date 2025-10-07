@@ -72,6 +72,7 @@ window.addEventListener("load", function () {
   // ✅ Restrict to sidebar only
   const linkById = new Map();
   Array.from(document.querySelectorAll("#sidebar a.nav-link[href]")).forEach(a => {
+    console.log("Found sidebar link:", a.getAttribute("href"));
     const id = idFromLink(a);
     if (id) linkById.set(id, a);
   });
