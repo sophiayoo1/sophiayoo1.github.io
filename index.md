@@ -2,13 +2,132 @@
 layout: page
 title: Welcome!
 icon: fas fa-home
-permalink: /
 ---
 
-I am a Ph.D. candidate in Electrical and Computer Engineering at Princeton University, where I design **high-performance, Internet-native systems for network security and privacy**. My research bridges *networks, systems, and security*, leveraging programmable data planes across hardware and software to make today's networks safer and smarter. 
 
-My work has been recognized with competitive funding, high-profile awards, and patents. [**SmartCookie**](/publications/#smartcookie) [USENIX Security 2024] was supported by three years of [*NSF GRFP*](https://ece.princeton.edu/news/nsf-awards-grads-work-computer-vision-security-and-clean-energy-materials) funding and is currently patent-pending; [**Tango**](/publications/#tango) [NSDI 2024] received the [*Applied Networking Research Prize*](https://ece.princeton.edu/news/princeton-researchers-win-applied-networking-research-prize-improving-internet-performance) from [*IETF/IRTF*](https://www.irtf.org/anrp/) for outstanding applied networking research; and **PraxiGuard** secured the *Wallace Memorial Fellowship*, Princeton’s highest honor for graduate engineering research excellence. In addition, my [5G work](/publications/#frontstorm) [USENIX Security 2024] with Microsoft Research is patent-pending, and my efforts have been recognized with [*Princeton’s Research Day Innovation & Entrepreneurial Mindset Award*](https://www.princeton.edu/news/2022/05/10/princeton-research-day-returns-fully-person-first-time-three-years) and the [*Pramod Subramanian ’17 Early Career Graduate Award*](https://ece.princeton.edu/news/graduate-commencement-celebrates-critical-contributions-doctoral-and-masters-students). 
+<!-- =================== HOME =================== -->
+<section id="home">
+  {% assign tab = site.tabs | where: "title", "Home" | first %}
+  <h2>{{ tab.title }}</h2>
+  {% assign section_name = "home" %}
+  {% capture file_path %}sections/{{ section_name }}.md{% endcapture %}
+  {% capture content %}{% include {{ file_path }} %}{% endcapture %}
+  {{ content | markdownify }}
+</section>
 
-**I am currently on the academic and research job market!** If my work resonates with you, I’d be glad to discuss opportunities or collaborations. Please feel free to reach out. 
+<!-- =================== RESEARCH =================== -->
+<section id="research">
+  {% assign tab = site.tabs | where: "title", "Research" | first %}
+  <h2>{{ tab.title }}</h2>
+  {% assign section_name = "research" %}
+  {% capture file_path %}sections/{{ section_name }}.md{% endcapture %}
+  {% capture content %}{% include {{ file_path }} %}{% endcapture %}
+  {{ content | markdownify }}
+</section>
+
+<!-- =================== PUBLICATIONS =================== -->
+<section id="publications">
+  {% assign tab = site.tabs | where: "title", "Publications" | first %}
+  <h2>{{ tab.title }}</h2>
+  {% assign section_name = "publications" %}
+  {% capture file_path %}sections/{{ section_name }}.md{% endcapture %}
+  {% capture content %}{% include {{ file_path }} %}{% endcapture %}
+  {{ content | markdownify }}
+</section>
+
+<!-- =================== CV =================== -->
+<section id="cv">
+  {% assign tab = site.tabs | where: "title", "CV" | first %}
+  <h2>{{ tab.title }}</h2>
+  {% assign section_name = "cv" %}
+  {% capture file_path %}sections/{{ section_name }}.md{% endcapture %}
+  {% capture content %}{% include {{ file_path }} %}{% endcapture %}
+  {{ content | markdownify }}
+</section>
+
+<!-- =================== INTERESTS =================== -->
+<section id="interests">
+  {% assign tab = site.tabs | where: "title", "Out-of-Band Interests" | first %}
+  <h2>{{ tab.title }}</h2>
+  {% assign section_name = "interests" %}
+  {% capture file_path %}sections/{{ section_name }}.md{% endcapture %}
+  {% capture content %}{% include {{ file_path }} %}{% endcapture %}
+  {{ content | markdownify }}
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Grab all sidebar links
+  const rawLinks = Array.from(document.querySelectorAll(".nav-item > a.nav-link"));
+
+  // Build (link,id,section) triples. Map "/" to "home".
+  const items = rawLinks.map(link => {
+    const href = link.getAttribute("href") || "";
+    let id = null;
+
+    if (href.includes("#")) {
+      id = href.split("#")[1];
+    } else if (href === "/") { // Home in Chirpy
+      id = "home";
+    }
+
+    const section = id ? document.getElementById(id) : null;
+    return section ? { link, id, section } : null;
+  }).filter(Boolean);
+
+  // If Home wasn't found, bail early to avoid errors
+  if (items.length === 0) return;
+
+  const OFFSET = 100; // match your header/spacing
+  const setActive = (idx) => {
+    items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
+  };
+
+  function updateActive() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docH = document.documentElement.scrollHeight;
+    const winH = window.innerHeight;
+
+    // Bottom → last section
+    if (scrollY + winH >= docH - 2) {
+      setActive(items.length - 1);
+      return;
+    }
+
+    // Top → Home (first item)
+    const firstTop = items[0].section.offsetTop;
+    if (scrollY <= firstTop + 200) {
+      setActive(0);
+      return;
+    }
+
+    // Otherwise, pick last section whose top is above the viewport top + OFFSET
+    let idx = 0;
+    for (let i = 0; i < items.length; i++) {
+      const top = items[i].section.offsetTop - OFFSET;
+      if (scrollY >= top) idx = i; else break;
+    }
+    setActive(idx);
+  }
+
+  // Smooth scroll + hash update
+  items.forEach(({ link, id, section }) => {
+    link.addEventListener("click", function (e) {
+      const href = link.getAttribute("href") || "";
+      if (href === "/" || href.startsWith("/#")) {
+        e.preventDefault();
+        window.scrollTo({ top: section.offsetTop - (OFFSET - 1), behavior: "smooth" });
+        history.replaceState(null, "", "/#" + id);
+      }
+    });
+  });
+
+  updateActive();
+  window.addEventListener("scroll", updateActive, { passive: true });
+  window.addEventListener("resize", updateActive);
+});
+</script>
+
 
 

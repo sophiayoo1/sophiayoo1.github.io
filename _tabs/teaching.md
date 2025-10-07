@@ -2,6 +2,7 @@
 layout: page
 title: Teaching
 icon: fas fa-chalkboard-teacher
+permalink: /#teacher
 order: 3
 ---
 

@@ -3,6 +3,7 @@
 # Import the theme
 theme: jekyll-theme-chirpy
 
+
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
@@ -16,10 +17,9 @@ timezone: America/New York
 
 title: Sophia Yoo # the main title
 
-tagline: Network Security Researcher<br>Ph.D. Candidate, Princeton ECE # it will display as the subtitle
+tagline: "Network Security Researcher <br> Ph.D. Candidate, Princeton ECE <br> Email: sophiayoo@princeton.edu"
 
 description: >- # used by seo meta and the atom feed
-  I am a network security researcher.
 
 
 # Fill in the protocol & hostname for your site.
@@ -90,6 +90,10 @@ pageviews:
 #     dark — Use the dark color scheme
 #
 theme_mode: # [light | dark]
+
+# Disable Chirpy’s built-in Home tab
+home:
+  enabled: false
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
@@ -225,3 +229,4 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
