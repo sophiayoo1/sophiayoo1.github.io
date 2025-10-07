@@ -59,37 +59,39 @@ icon: fas fa-home
 
 {% raw %}
 <script>
-window.addEventListener("load", () => {
-  const SECTIONS = ["home","research","publications","cv","interests"];
-  const OFFSET = 100;
+window.addEventListener("load", function () {
+  const ORDER = ["home","research","publications","cv","interests"];
 
-  // Map section IDs to sidebar links
-  const linkById = new Map();
-  document.querySelectorAll("a.nav-link[href]").forEach(a => {
+  function idFromLink(a) {
     const href = a.getAttribute("href") || "";
-    if (href === "/" || href === "/#home") {
-      linkById.set("home", a);
-      return;
-    }
+    if (href === "/" || href === "/#home") return "home";
     const m = href.match(/^\/#([A-Za-z0-9\-_]+)/);
-    if (m && SECTIONS.includes(m[1])) linkById.set(m[1], a);
+    return (m && ORDER.includes(m[1])) ? m[1] : null;
+  }
+
+  // ✅ Restrict to sidebar only
+  const linkById = new Map();
+  Array.from(document.querySelectorAll("#sidebar a.nav-link[href]")).forEach(a => {
+    const id = idFromLink(a);
+    if (id) linkById.set(id, a);
   });
 
-  const items = SECTIONS.map(id => {
+  const items = ORDER.map(id => {
     const sec = document.getElementById(id);
     const link = linkById.get(id);
-    return (sec && link) ? {id, sec, link} : null;
+    return (sec && link) ? { id, sec, link } : null;
   }).filter(Boolean);
 
   if (!items.length) return;
 
-  const setActive = id =>
-    items.forEach(({id: i, link}) => link.classList.toggle("active", i === id));
+  const OFFSET = 100;
+  const setActive = id => items.forEach(it => it.link.classList.toggle("active", it.id === id));
 
   function updateActive() {
     const y = window.scrollY;
-    const bottom = y + window.innerHeight >= document.documentElement.scrollHeight - 2;
-    if (bottom) return setActive(items.at(-1).id);
+    const docH = document.documentElement.scrollHeight;
+    const winH = window.innerHeight;
+    if (y + winH >= docH - 2) return setActive(items.at(-1).id);
 
     let current = items[0].id;
     for (const it of items) {
@@ -99,18 +101,17 @@ window.addEventListener("load", () => {
     setActive(current);
   }
 
-  // Smooth scroll on click + update URL
-  items.forEach(({link,sec,id}) => {
+  items.forEach(({ link, sec, id }) => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      window.scrollTo({top: sec.offsetTop - (OFFSET - 1), behavior: "smooth"});
+      window.scrollTo({ top: sec.offsetTop - (OFFSET - 1), behavior: "smooth" });
       history.replaceState(null, "", "/#" + id);
       setActive(id);
     });
   });
 
   updateActive();
-  window.addEventListener("scroll", updateActive, {passive:true});
+  window.addEventListener("scroll", updateActive, { passive: true });
   window.addEventListener("resize", updateActive);
 });
 </script>
