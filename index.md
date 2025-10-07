@@ -58,7 +58,8 @@ icon: fas fa-home
 
 {% raw %}
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
   // Sections in scroll order (IDs must match your <section id="...">)
   const ORDER = ["home","research","publications","cv","interests"];
 
