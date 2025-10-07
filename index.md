@@ -55,6 +55,55 @@ icon: fas fa-home
   {{ content | markdownify }}
 </section>
 
+{% raw %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const rawLinks = Array.from(document.querySelectorAll(".nav-item a.nav-link"));
+  const items = rawLinks.map(link => {
+    const href = link.getAttribute("href") || "";
+    let id = null;
+    if (href.includes("#")) id = href.split("#")[1];
+    else if (href === "/") id = "home";
+    const section = id ? document.getElementById(id) : null;
+    return section ? { link, id, section } : null;
+  }).filter(Boolean);
+
+  const OFFSET = 100;
+  const setActive = (idx) => items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
+
+  function updateActive() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docH = document.documentElement.scrollHeight;
+    const winH = window.innerHeight;
+    if (scrollY + winH >= docH - 2) return setActive(items.length - 1);
+    if (scrollY <= (items[0].section.offsetTop + 200)) return setActive(0);
+    let idx = 0;
+    for (let i = 0; i < items.length; i++) {
+      if (scrollY >= (items[i].section.offsetTop - OFFSET)) idx = i; else break;
+    }
+    setActive(idx);
+  }
+
+  items.forEach(({ link, id, section }) => {
+    link.addEventListener("click", e => {
+      const href = link.getAttribute("href") || "";
+      if (href === "/" || href.startsWith("/#")) {
+        e.preventDefault();
+        window.scrollTo({ top: section.offsetTop - (OFFSET - 1), behavior: "smooth" });
+        history.replaceState(null, "", "/#" + id);
+      }
+    });
+  });
+
+  updateActive();
+  window.addEventListener("scroll", updateActive, { passive: true });
+  window.addEventListener("resize", updateActive);
+});
+</script>
+{% endraw %}
+
+
+<!-- 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -130,4 +179,4 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-
+ -->
