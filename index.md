@@ -58,25 +58,37 @@ icon: fas fa-home
 {% raw %}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const rawLinks = Array.from(document.querySelectorAll(".nav-item a.nav-link"));
+  // Chirpy-compatible selector for sidebar links
+  const rawLinks = Array.from(document.querySelectorAll(".sidebar a.nav-link, .nav-item a.nav-link"));
+
+  // Map "/" to #home
   const items = rawLinks.map(link => {
     const href = link.getAttribute("href") || "";
     let id = null;
     if (href.includes("#")) id = href.split("#")[1];
-    else if (href === "/") id = "home";
+    else if (href === "/" || href.endsWith("/")) id = "home";
     const section = id ? document.getElementById(id) : null;
     return section ? { link, id, section } : null;
   }).filter(Boolean);
 
+  if (items.length === 0) return; // no sections found
+
   const OFFSET = 100;
-  const setActive = (idx) => items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
+  const setActive = idx =>
+    items.forEach((it, i) => it.link.classList.toggle("active", i === idx));
 
   function updateActive() {
     const scrollY = window.scrollY || window.pageYOffset;
     const docH = document.documentElement.scrollHeight;
     const winH = window.innerHeight;
+
+    // Bottom → last section active
     if (scrollY + winH >= docH - 2) return setActive(items.length - 1);
-    if (scrollY <= (items[0].section.offsetTop + 200)) return setActive(0);
+
+    // Top → Home
+    if (scrollY <= items[0].section.offsetTop + 200) return setActive(0);
+
+    // Otherwise → nearest section
     let idx = 0;
     for (let i = 0; i < items.length; i++) {
       if (scrollY >= (items[i].section.offsetTop - OFFSET)) idx = i; else break;
@@ -84,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setActive(idx);
   }
 
+  // Smooth scroll
   items.forEach(({ link, id, section }) => {
     link.addEventListener("click", e => {
       const href = link.getAttribute("href") || "";
@@ -101,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 {% endraw %}
+
 
 
 <!-- 
