@@ -1,4 +1,5 @@
-### SmartCookie: Blocking Large-Scale SYN Floods with a Split-Proxy Defense on Programmable Data Planes {#smartcookie}
+<!-- ### SmartCookie: Blocking Large-Scale SYN Floods with a Split-Proxy Defense on Programmable Data Planes {#smartcookie} -->
+<h3 id="smartcookie">SmartCookie: Blocking Large-Scale SYN Floods with a Split-Proxy Defense on Programmable Data Planes</h3>
 **Sophia Yoo**, Xiaoqi Chen, Jennifer Rexford  
 *USENIX Security 2024*  
 <a href="/documents/SmartCookie_Paper_USENIXSec24.pdf" target="_blank" rel="noopener">Paper (PDF)</a> · 
@@ -9,7 +10,8 @@
 
 
 
-### On the Criticality of Integrity Protection in 5G Fronthaul Networks {#frontstorm}
+<!-- ### On the Criticality of Integrity Protection in 5G Fronthaul Networks {#frontstorm} -->
+<h3 id="frontstorm">On the Criticality of Integrity Protection in 5G Fronthaul Networks</h3>
 **Sophia Yoo\***, Jiarong Xing\*, Xenofon Foukas, Daehyeok Kim, Michael K. Reiter  
 *USENIX Security 2024*  
 <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
@@ -17,14 +19,16 @@
 
 
 
-### TANGO: Secure Collaborative Route Control across the Public Internet {#tango}
+<!-- ### TANGO: Secure Collaborative Route Control across the Public Internet {#tango} -->
+<h3 id="tango">TANGO: Secure Collaborative Route Control across the Public Internet</h3>
 Henry Birge-Lee, **Sophia Yoo**, Benjamin Herber, Jennifer Rexford, Maria Apostolaki  
 *NSDI 2024*  
 <a href="/documents/Tango_Paper_NSDI24.pdf" target="_blank" rel="noopener">Paper (PDF)</a> · 
 <a href="/documents/Tango_Slides_NSDI24.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
 
 
-### Sieve: Layered Network Defenses against Large-Scale Attacks {#sieve}
+<!-- ### Sieve: Layered Network Defenses against Large-Scale Attacks {#sieve} -->
+<h3 id="sieve">Sieve: Layered Network Defenses against Large-Scale Attacks</h3>
 **Sophia Yoo**, Satadal Sengupta, Maria Apostolaki, Jennifer Rexford  
 *ONF P4 Workshop 2023*  
 <a href="/documents/Sieve_Paper_P4Workshop23.pdf" target="_blank" rel="noopener">Paper (PDF)</a> · 
@@ -32,7 +36,8 @@ Henry Birge-Lee, **Sophia Yoo**, Benjamin Herber, Jennifer Rexford, Maria Aposto
 
 
 
-### Distributed In-Network SYN Flooding Mitigation {#smartcookie-poster}
+<!-- ### Distributed In-Network SYN Flooding Mitigation {#smartcookie-poster} -->
+<h3 id="smartcookie-poster">Distributed In-Network SYN Flooding Mitigation</h3>
 **Sophia Yoo**, Xiaoqi Chen, Jennifer Rexford  
 *Princeton Research Day 2022 (Poster)*  
 <a href="/documents/SmartCookie_Poster_Princeton22.pdf" target="_blank" rel="noopener">Poster (PDF)</a> · 
@@ -41,7 +46,8 @@ Henry Birge-Lee, **Sophia Yoo**, Benjamin Herber, Jennifer Rexford, Maria Aposto
 <a href="https://github.com/Princeton-Cabernet/p4-projects/tree/master/SmartCookie" target="_blank" rel="noopener">P4 Code (GitHub)</a>
 
 
-### Secure Keyed Hashing on Programmable Switches {#siphash}
+<!-- ### Secure Keyed Hashing on Programmable Switches {#siphash} -->
+<h3 id="siphash">Secure Keyed Hashing on Programmable Switches</h3>
 **Sophia Yoo**, Xiaoqi Chen  
 *ACM SIGCOMM 2021 Workshop on Secure Programmable Network Infrastructure (SPIN 2021)*  
 <a href="/documents/SipID_Paper_SPIN21.pdf" target="_blank" rel="noopener">Paper (PDF)</a> · 
