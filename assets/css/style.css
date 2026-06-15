@@ -413,10 +413,11 @@ em     { font-style: italic; }
 }
 .pub-featured-patent::before { content: '⊕ '; }
 
-/* News service/mentor/talk badges */
-.nb-service { background: rgba(45,212,191,0.1);  color: #2dd4bf; border: 1px solid rgba(45,212,191,0.25); }
-.nb-mentor  { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
-.nb-talk    { background: rgba(244,114,182,0.1); color: #f472b6; border: 1px solid rgba(244,114,182,0.25); }
+/* News service/mentor/talk/industry badges */
+.nb-service  { background: rgba(45,212,191,0.1);  color: #2dd4bf; border: 1px solid rgba(45,212,191,0.25); }
+.nb-mentor   { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+.nb-talk     { background: rgba(244,114,182,0.1); color: #f472b6; border: 1px solid rgba(244,114,182,0.25); }
+.nb-industry { background: rgba(251,146,60,0.1);  color: #fb923c; border: 1px solid rgba(251,146,60,0.25); }
 
 /* ---------- Teaching ---------- */
 .course-list { display: flex; flex-direction: column; gap: 16px; }
