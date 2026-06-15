@@ -331,6 +331,92 @@ em     { font-style: italic; }
   border-radius: var(--radius); font-size: 0.95rem; line-height: 1.55;
 }
 
+/* Research theme cards */
+.research-themes { display: flex; flex-direction: column; gap: 20px; }
+
+.research-theme {
+  background: linear-gradient(145deg, #0f1c2e 0%, #090f1a 100%);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.research-theme:hover {
+  border-color: rgba(77,166,255,0.35);
+  box-shadow: 0 6px 36px rgba(0,0,0,0.45);
+}
+
+.research-theme-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 22px 26px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.research-theme-num {
+  font-size: 1.9rem; font-weight: 800; color: var(--accent);
+  opacity: 0.18; line-height: 1; flex-shrink: 0; margin-top: 2px;
+  letter-spacing: -0.04em;
+}
+.research-theme-title {
+  font-size: 1.1rem; font-weight: 700; color: var(--text);
+  margin-bottom: 4px; letter-spacing: -0.02em;
+}
+.research-theme-q {
+  font-size: 0.875rem; color: var(--accent); font-style: italic; line-height: 1.4;
+}
+
+.research-theme-body { padding: 18px 26px 22px; }
+.research-theme-desc {
+  font-size: 0.95rem; color: var(--text-muted); line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.research-projects { display: flex; flex-direction: column; gap: 14px; }
+
+.research-project {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+.research-project-top {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 6px;
+}
+.research-project-name {
+  font-size: 0.95rem; font-weight: 700; color: var(--text);
+}
+.venue-chip {
+  display: inline-block; font-size: 0.62rem; font-weight: 700; padding: 2px 7px;
+  border-radius: 4px; background: var(--accent-bg); color: var(--accent);
+  border: 1px solid rgba(77,166,255,0.22); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.venue-chip-gold {
+  background: rgba(240,180,41,0.1); color: var(--gold); border-color: rgba(240,180,41,0.25);
+}
+.venue-chip-green {
+  background: rgba(62,207,110,0.1); color: var(--green); border-color: rgba(62,207,110,0.25);
+}
+.research-project-desc {
+  font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px;
+}
+.research-project-links { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Patent pop in featured cards */
+.pub-featured-patent {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.7rem; font-weight: 600; padding: 3px 9px;
+  border-radius: 4px; margin-top: 7px;
+  background: rgba(167,139,250,0.1); color: var(--purple);
+  border: 1px solid rgba(167,139,250,0.3);
+  letter-spacing: 0.04em;
+}
+.pub-featured-patent::before { content: '⊕ '; }
+
+/* News service/mentor badges */
+.nb-service { background: rgba(45,212,191,0.1); color: #2dd4bf; border: 1px solid rgba(45,212,191,0.25); }
+.nb-mentor  { background: rgba(251,191,36,0.1);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+
 /* ---------- Teaching ---------- */
 .course-list { display: flex; flex-direction: column; gap: 16px; }
 .course-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; }

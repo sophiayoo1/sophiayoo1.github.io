@@ -13,169 +13,235 @@ permalink: /research/
   <section class="section">
     <div class="prose research-statement">
       <p>
-        My research develops <em>practical systems</em> that bring
-        <strong>security and privacy to real-world networks — without compromising performance</strong>.
-        Most existing solutions treat the Internet as a black box, adding protections on top that slow
-        applications or demand tech-savvy users. In contrast, my work pushes security functions
-        <em>into the network itself</em> and uses <strong>hardware–software co-design</strong>
-        to make defenses scalable, performant, and deployable today.
+        My research builds <em>practical systems</em> that bring
+        <strong>security and privacy to real-world networks — without sacrificing performance</strong>.
+        Most existing solutions treat the Internet as a black box and add protections on top
+        that are either too slow for high-speed traffic or too fragile against determined adversaries.
+        My approach is different: push security functions <em>into the network itself</em> using
+        <strong>hardware–software co-design</strong>, and design protocols that let
+        <strong>mutually-interested actors cooperate</strong> to achieve collective defenses
+        no single operator could mount alone.
       </p>
-      <p>My research philosophy is guided by three principles:</p>
     </div>
 
     <ul class="principles">
       <li class="principle">
-        Security and privacy functions should run <em>in-network</em> or be natively
-        <strong>network-aware</strong>, rather than bolted on at endpoints.
+        <strong>In-network enforcement</strong> — Security functions belong at the data plane,
+        where they can operate at line rate before attacks saturate servers or upstream links.
       </li>
       <li class="principle">
-        <strong>Hardware–software co-design</strong> is essential for scalable defenses —
-        programmable data planes (P4, eBPF) unlock performance that software alone cannot match.
+        <strong>Hardware–software co-design</strong> — Pairing P4 programmable ASICs with
+        commodity software proxies unlocks performance that neither can achieve alone.
       </li>
       <li class="principle">
-        <strong>Cooperation among incentive-aligned actors</strong> enables deployable,
-        collective mechanisms that protect users at Internet scale.
+        <strong>Deployable cooperation</strong> — Lasting Internet-scale protections require
+        incentive-aligned designs that work within today's routing and policy constraints.
       </li>
     </ul>
 
     <div class="prose">
       <p>
-        Across all efforts, I emphasize <strong>building prototypes, open-source artifacts,
-        and deployable systems</strong> to ensure real-world impact. Taken together, my work
-        lays the foundation for ubiquitous, deployable network security and privacy —
-        protecting users at Internet scale.
+        All projects produce <strong>open-source prototypes and artifacts</strong> so results
+        can be reproduced, extended, and deployed. Below I organize my work into three themes;
+        for a complete list of venues, see the <a href="/publications/">Publications</a> page.
       </p>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Theme cards -->
   <section class="section">
-    <h2 class="section-label">Projects</h2>
+    <h2 class="section-label">Research Themes</h2>
 
-    <!-- SmartCookie -->
-    <div class="pub-card" style="margin-bottom:16px;">
-      <span class="pub-venue">USENIX Security 2024 &nbsp;·&nbsp; Network Edge</span>
-      <div class="pub-title">SmartCookie</div>
-      <div class="prose" style="margin:8px 0 12px; font-size:0.95rem;">
-        <p>
-          A layered hardware–software defense that blocks large-scale SYN-flood attacks
-          without degrading legitimate user performance. SmartCookie splits the SYN-cookie
-          computation between a P4 programmable switch (hardware) and a software proxy,
-          achieving line-rate protection while maintaining correct TCP semantics.
-          It is currently <strong>patent-pending</strong> and was supported by three years
-          of <strong>NSF GRFP</strong> funding.
-        </p>
-      </div>
-      <div class="pub-links">
-        <a href="/documents/SmartCookie_Paper_USENIXSec24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Paper</a>
-        <a href="/documents/SmartCookie_Artifact_USENIXSec24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Artifact</a>
-        <a href="/documents/SmartCookie_Slides_USENIXSec24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Slides</a>
-        <a href="https://www.youtube.com/embed/oNi_4wCo9Gg?si=2YLaf0dpxxprv_WW"
-           class="pub-link" target="_blank" rel="noopener">Demo Video</a>
-        <a href="https://github.com/Princeton-Cabernet/p4-projects/tree/master/SmartCookie"
-           class="pub-link" target="_blank" rel="noopener">Code (GitHub)</a>
-      </div>
-    </div>
+    <div class="research-themes">
 
-    <!-- 5G Fronthaul Security -->
-    <div class="pub-card" style="margin-bottom:16px;">
-      <span class="pub-venue">USENIX Security 2024 &nbsp;·&nbsp; 5G / Mobile Security</span>
-      <div class="pub-title">5G Fronthaul Security</div>
-      <div class="prose" style="margin:8px 0 12px; font-size:0.95rem;">
-        <p>
-          A study uncovering new integrity vulnerabilities in 5G fronthaul protocols —
-          the critical link between base station antennas and the baseband processing unit.
-          This work (with Microsoft Research) demonstrates practical attack scenarios and
-          prompts calls for stronger integrity protections in emerging cellular standards.
-          Currently <strong>patent-pending</strong>.
-        </p>
-      </div>
-      <div class="pub-links">
-        <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Paper</a>
-      </div>
-    </div>
+      <!-- Theme 1 -->
+      <div class="research-theme">
+        <div class="research-theme-header">
+          <div class="research-theme-num">01</div>
+          <div>
+            <h3 class="research-theme-title">Programmable In-Network Defenses</h3>
+            <p class="research-theme-q">Can we stop large-scale network attacks entirely within the data plane?</p>
+          </div>
+        </div>
+        <div class="research-theme-body">
+          <p class="research-theme-desc">
+            Volumetric DDoS attacks and SYN floods overwhelm servers before any software-only
+            defense can react. By splitting the defense between a P4 programmable switch
+            (which handles traffic at hardware line rate) and a lightweight software proxy
+            (which performs stateful verification), we can absorb multi-gigabit floods while
+            maintaining correct TCP semantics for legitimate users — all without touching core
+            router infrastructure.
+          </p>
+          <div class="research-projects">
 
-    <!-- Tango -->
-    <div class="pub-card" style="margin-bottom:16px;">
-      <span class="pub-venue">NSDI 2024 &nbsp;·&nbsp; Network Core &nbsp;·&nbsp; IETF/IRTF ANRP</span>
-      <div class="pub-title">TANGO</div>
-      <div class="prose" style="margin:8px 0 12px; font-size:0.95rem;">
-        <p>
-          A system for <em>secure collaborative route control</em> across the public Internet.
-          Cooperating edge networks use only existing BGP mechanisms to jointly discover and
-          select safer, higher-quality Internet paths — with no changes to core routers.
-          TANGO received the <strong>IETF/IRTF Applied Networking Research Prize</strong>
-          for outstanding applied networking research.
-        </p>
-      </div>
-      <div class="pub-links">
-        <a href="/documents/Tango_Paper_NSDI24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Paper</a>
-        <a href="/documents/Tango_Slides_NSDI24.pdf"
-           class="pub-link" target="_blank" rel="noopener">Slides</a>
-      </div>
-    </div>
+            <div class="research-project">
+              <div class="research-project-top">
+                <span class="research-project-name">SmartCookie</span>
+                <span class="venue-chip">USENIX Security 2024</span>
+                <span class="venue-chip-green">Patent pending</span>
+                <span class="venue-chip">NSF GRFP</span>
+              </div>
+              <p class="research-project-desc">
+                The first hardware–software split-proxy implementation of SYN-cookie defenses on
+                a P4 programmable switch. SmartCookie intercepts and validates SYN/ACK handshakes at
+                switch line rate, forwarding only verified connections to the protected server —
+                achieving throughput several orders of magnitude beyond what any server-side defense
+                can sustain.
+              </p>
+              <div class="research-project-links">
+                <a href="/documents/SmartCookie_Paper_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Paper</a>
+                <a href="/documents/SmartCookie_Artifact_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Artifact</a>
+                <a href="/documents/SmartCookie_Slides_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a>
+                <a href="https://www.youtube.com/embed/oNi_4wCo9Gg?si=2YLaf0dpxxprv_WW" class="pub-link" target="_blank" rel="noopener">Demo Video</a>
+                <a href="https://github.com/Princeton-Cabernet/p4-projects/tree/master/SmartCookie" class="pub-link" target="_blank" rel="noopener">Code (GitHub)</a>
+              </div>
+            </div>
 
-    <!-- Sieve -->
-    <div class="pub-card" style="margin-bottom:16px;">
-      <span class="pub-venue">ONF P4 Workshop 2023 &nbsp;·&nbsp; Network Edge</span>
-      <div class="pub-title">Sieve</div>
-      <div class="prose" style="margin:8px 0 12px; font-size:0.95rem;">
-        <p>
-          A generalization of SmartCookie's layered split-proxy design to a broader class
-          of volumetric DDoS attacks. Sieve introduces a principled framework for deploying
-          layered, in-network defenses that compose hardware filtering with software
-          intelligence.
-        </p>
-      </div>
-      <div class="pub-links">
-        <a href="/documents/Sieve_Paper_P4Workshop23.pdf"
-           class="pub-link" target="_blank" rel="noopener">Paper</a>
-        <a href="/documents/Sieve_Slides_P4Workshop23.pptx"
-           class="pub-link" target="_blank" rel="noopener">Slides</a>
-      </div>
-    </div>
+            <div class="research-project">
+              <div class="research-project-top">
+                <span class="research-project-name">Sieve</span>
+                <span class="venue-chip">ONF P4 Workshop 2023</span>
+              </div>
+              <p class="research-project-desc">
+                A principled <em>framework</em> for layering in-network defenses: a P4 switch
+                acts as a coarse-grained hardware filter at 100 Gbps; a software proxy then
+                applies fine-grained stateful inspection to the residual traffic. Sieve
+                generalizes SmartCookie's split-proxy design to a broader class of volumetric
+                attacks and provides a design template for future in-network defenses.
+              </p>
+              <div class="research-project-links">
+                <a href="/documents/Sieve_Paper_P4Workshop23.pdf" class="pub-link" target="_blank" rel="noopener">Paper</a>
+                <a href="/documents/Sieve_Slides_P4Workshop23.pptx" class="pub-link" target="_blank" rel="noopener">Slides</a>
+              </div>
+            </div>
 
-    <!-- PraxiGuard -->
-    <div class="pub-card">
-      <span class="pub-venue">Ongoing Work &nbsp;·&nbsp; Privacy</span>
-      <div class="pub-title">PraxiGuard</div>
-      <div class="prose" style="margin:8px 0 12px; font-size:0.95rem;">
-        <p>
-          A principled, network-aware model for splitting traffic across multiple paths
-          to jointly optimize privacy and performance, mitigating website-fingerprinting attacks.
-          PraxiGuard secured Princeton's <strong>Wallace Memorial Fellowship</strong> —
-          the highest honor for graduate engineering research excellence.
-        </p>
+          </div>
+        </div>
       </div>
+
+      <!-- Theme 2 -->
+      <div class="research-theme">
+        <div class="research-theme-header">
+          <div class="research-theme-num">02</div>
+          <div>
+            <h3 class="research-theme-title">Collaborative Internet-Scale Security</h3>
+            <p class="research-theme-q">How can mutually-interested networks cooperate to defend paths they cannot control alone?</p>
+          </div>
+        </div>
+        <div class="research-theme-body">
+          <p class="research-theme-desc">
+            Many of the most damaging Internet attacks — BGP hijacking, traffic interception,
+            path manipulation — are fundamentally multi-AS problems. No single operator controls
+            the full path. My work designs protocols where edge networks share minimal information
+            to jointly discover safer routes and collaboratively enforce them, using
+            <em>only mechanisms already deployed in the global routing infrastructure</em>.
+          </p>
+          <div class="research-projects">
+
+            <div class="research-project">
+              <div class="research-project-top">
+                <span class="research-project-name">TANGO</span>
+                <span class="venue-chip">NSDI 2024</span>
+                <span class="venue-chip-gold">IETF/IRTF Applied Networking Research Prize</span>
+              </div>
+              <p class="research-project-desc">
+                Secure collaborative route control across the public Internet. Groups of
+                cooperating edge networks use existing BGP mechanisms to probe alternative
+                paths, share reachability observations, and collectively select routes that
+                avoid known attack infrastructure — without requiring changes to core routers
+                or centralized coordination. Recognized by the IETF/IRTF community as
+                outstanding applied networking research.
+              </p>
+              <div class="research-project-links">
+                <a href="/documents/Tango_Paper_NSDI24.pdf" class="pub-link" target="_blank" rel="noopener">Paper</a>
+                <a href="/documents/Tango_Slides_NSDI24.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a>
+              </div>
+            </div>
+
+            <div class="research-project">
+              <div class="research-project-top">
+                <span class="research-project-name">PraxiGuard</span>
+                <span class="venue-chip-gold">Wallace Memorial Fellowship</span>
+              </div>
+              <p class="research-project-desc">
+                A network-aware traffic-splitting framework for mitigating website-fingerprinting
+                attacks. PraxiGuard distributes traffic across multiple network paths to jointly
+                optimize user privacy and performance, blinding an adversary's ability to infer
+                visited sites from encrypted traffic patterns. Supported by Princeton's Wallace
+                Memorial Fellowship — the university's highest honor for graduate engineering research.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme 3 -->
+      <div class="research-theme">
+        <div class="research-theme-header">
+          <div class="research-theme-num">03</div>
+          <div>
+            <h3 class="research-theme-title">Emerging Network Threat Surfaces</h3>
+            <p class="research-theme-q">What new attack surfaces open as networks evolve toward 5G and programmable infrastructure?</p>
+          </div>
+        </div>
+        <div class="research-theme-body">
+          <p class="research-theme-desc">
+            As networks grow more heterogeneous — incorporating 5G RAN, edge compute, and
+            programmable ASICs — new threat surfaces emerge that existing security models
+            do not address. My work in this area characterizes those threats concretely
+            and proposes defenses calibrated to the specific constraints of modern network hardware.
+          </p>
+          <div class="research-projects">
+
+            <div class="research-project">
+              <div class="research-project-top">
+                <span class="research-project-name">5G Fronthaul Security</span>
+                <span class="venue-chip">USENIX Security 2024</span>
+                <span class="venue-chip-green">Patent pending</span>
+              </div>
+              <p class="research-project-desc">
+                The first systematic study of integrity vulnerabilities in 5G fronthaul —
+                the high-speed, time-sensitive link between a base station's remote radio head
+                and baseband processing unit. In collaboration with Microsoft Research, we
+                demonstrate practical attack scenarios that compromise signal integrity, and
+                present the case for stronger mandatory integrity protections in upcoming
+                cellular standards. A patent application is pending.
+              </p>
+              <div class="research-project-links">
+                <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Paper</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Future directions -->
+  <!-- At Amherst -->
   <section class="section">
     <h2 class="section-label">At Amherst</h2>
     <div class="prose">
       <p>
-        I am excited to extend this research agenda at Amherst in directions that invite
-        hands-on undergraduate participation:
+        I am building a research group at Amherst centered on the following directions,
+        designed to engage undergraduate researchers meaningfully:
       </p>
       <ul>
         <li>
-          <strong>Measurement studies closer to the user</strong> — turning campus and home
-          networks into living laboratories for identifying vulnerabilities in emerging devices
-          such as IoT sensors and drones.
+          <strong>Measurement and security of edge and IoT networks</strong> — using campus,
+          home, and community networks as living laboratories to identify real vulnerabilities
+          in sensors, drones, and connected devices.
         </li>
         <li>
-          <strong>A unifying framework for split-functionality defenses</strong> — combining
-          centralized reasoning with distributed enforcement using accessible platforms like eBPF.
+          <strong>A unifying theory for split-functionality defenses</strong> — generalizing
+          SmartCookie and Sieve into a principled framework applicable to eBPF, SmartNICs,
+          and other accessible programmable substrates.
         </li>
         <li>
-          <strong>Security and performance challenges of AI workloads</strong> — large-language-model
-          inference stresses networks in new ways and opens novel attack surfaces.
+          <strong>Security of AI-driven network workloads</strong> — LLM inference creates
+          novel network-layer traffic patterns and attack surfaces not yet well understood.
         </li>
       </ul>
       <p>
