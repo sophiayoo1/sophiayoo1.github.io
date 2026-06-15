@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="760" height="180">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4da6ff"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f85149"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Attacker cloud -->
+  <ellipse cx="72" cy="68" rx="52" ry="28" fill="none" stroke="#f85149" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="72" y="63" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#f85149" font-weight="600">Attacker</text>
+  <text x="72" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8fa3b8">SYN flood</text>
+  <!-- Legitimate client -->
+  <rect x="20" y="120" width="104" height="36" rx="6" fill="none" stroke="#2a3a50" stroke-width="1.2"/>
+  <text x="72" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#8fa3b8">Legit Clients</text>
+
+  <!-- Arrow: Attacker → Switch -->
+  <line x1="126" y1="68" x2="210" y2="88" stroke="#f85149" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <!-- Arrow: Clients → Switch -->
+  <line x1="124" y1="138" x2="210" y2="110" stroke="#4da6ff" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- P4 Switch box -->
+  <rect x="212" y="62" width="154" height="66" rx="8" fill="#0d1a28" stroke="#4da6ff" stroke-width="1.5"/>
+  <text x="289" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#4da6ff" font-weight="700" letter-spacing="0.04em">P4 SWITCH</text>
+  <text x="289" y="99" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8fa3b8">SYN-cookie verify</text>
+  <text x="289" y="114" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8fa3b8">line-rate (100 Gbps)</text>
+
+  <!-- SmartCookie Proxy -->
+  <rect x="212" y="144" width="154" height="28" rx="6" fill="#0d1a28" stroke="#3fb950" stroke-width="1.2"/>
+  <text x="289" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#3fb950" font-weight="600">SmartCookie Proxy</text>
+  <!-- Vertical link Switch ↔ Proxy -->
+  <line x1="289" y1="128" x2="289" y2="143" stroke="#3fb950" stroke-width="1.2" stroke-dasharray="3,2" marker-end="url(#arr-green)"/>
+  <text x="296" y="138" font-family="Inter,sans-serif" font-size="9" fill="#3fb950">Stage 2</text>
+
+  <!-- Label: Stage 1 -->
+  <text x="289" y="53" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#536070" letter-spacing="0.06em">STAGE 1 (HW)</text>
+
+  <!-- Arrow: Switch → Server -->
+  <line x1="368" y1="95" x2="448" y2="95" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arr-green)"/>
+  <text x="408" y="87" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#3fb950">verified SYN</text>
+
+  <!-- Blocked label -->
+  <text x="408" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#f85149">flood dropped ✕</text>
+
+  <!-- Server -->
+  <rect x="450" y="68" width="100" height="54" rx="8" fill="#0d1a28" stroke="#2a3a50" stroke-width="1.2"/>
+  <text x="500" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#eaf0f8" font-weight="600">Server</text>
+  <text x="500" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">protected</text>
+
+  <!-- Key insight callout -->
+  <rect x="572" y="52" width="172" height="82" rx="8" fill="#0a1520" stroke="#1e2a38" stroke-width="1"/>
+  <text x="658" y="71" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#eaf0f8" font-weight="600">Key Insight</text>
+  <text x="658" y="87" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">Split proxy: P4 HW handles</text>
+  <text x="658" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">crypto at line rate; SW proxy</text>
+  <text x="658" y="115" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">maintains TCP semantics</text>
+
+  <!-- Title -->
+  <text x="380" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#536070" letter-spacing="0.06em">SYSTEM ARCHITECTURE</text>
+</svg>

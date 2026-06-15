@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="760" height="180">
+  <defs>
+    <marker id="sa" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#4da6ff"/>
+    </marker>
+    <marker id="sa-r" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#f85149"/>
+    </marker>
+    <marker id="sa-g" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="380" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#536070" letter-spacing="0.06em">LAYERED IN-NETWORK DEFENSE PIPELINE</text>
+
+  <!-- Incoming traffic -->
+  <text x="42" y="87" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#f85149">Volumetric</text>
+  <text x="42" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#f85149">Attack</text>
+  <text x="42" y="113" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">+ Legit</text>
+  <line x1="72" y1="97" x2="100" y2="97" stroke="#4da6ff" stroke-width="2" marker-end="url(#sa)"/>
+
+  <!-- Layer 1: P4 HW Switch -->
+  <rect x="102" y="52" width="140" height="90" rx="8" fill="#0d1a28" stroke="#4da6ff" stroke-width="1.8"/>
+  <text x="172" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#4da6ff" font-weight="700" letter-spacing="0.04em">LAYER 1</text>
+  <text x="172" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#eaf0f8" font-weight="600">P4 Switch</text>
+  <text x="172" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">hardware filter</text>
+  <text x="172" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">coarse-grained</text>
+  <text x="172" y="131" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#536070">100 Gbps line rate</text>
+
+  <!-- Drop arrow L1 -->
+  <line x1="140" y1="142" x2="140" y2="164" stroke="#f85149" stroke-width="1.2" marker-end="url(#sa-r)"/>
+  <text x="153" y="162" font-family="Inter,sans-serif" font-size="9" fill="#f85149">drop L1</text>
+
+  <!-- Arrow L1 → L2 -->
+  <line x1="243" y1="97" x2="278" y2="97" stroke="#4da6ff" stroke-width="1.8" marker-end="url(#sa)"/>
+  <text x="260" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#8fa3b8">residual</text>
+
+  <!-- Layer 2: Software proxy -->
+  <rect x="280" y="52" width="140" height="90" rx="8" fill="#0d1a28" stroke="#3fb950" stroke-width="1.8"/>
+  <text x="350" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#3fb950" font-weight="700" letter-spacing="0.04em">LAYER 2</text>
+  <text x="350" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#eaf0f8" font-weight="600">SW Proxy</text>
+  <text x="350" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">software filter</text>
+  <text x="350" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">fine-grained</text>
+  <text x="350" y="131" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#536070">stateful inspection</text>
+
+  <!-- Drop arrow L2 -->
+  <line x1="318" y1="142" x2="318" y2="164" stroke="#f85149" stroke-width="1.2" marker-end="url(#sa-r)"/>
+  <text x="331" y="162" font-family="Inter,sans-serif" font-size="9" fill="#f85149">drop L2</text>
+
+  <!-- Arrow L2 → L3 -->
+  <line x1="421" y1="97" x2="456" y2="97" stroke="#4da6ff" stroke-width="1.8" marker-end="url(#sa)"/>
+  <text x="438" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#8fa3b8">clean</text>
+
+  <!-- Layer 3: Application -->
+  <rect x="458" y="52" width="140" height="90" rx="8" fill="#0d1a28" stroke="#d29922" stroke-width="1.8"/>
+  <text x="528" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#d29922" font-weight="700" letter-spacing="0.04em">LAYER 3</text>
+  <text x="528" y="89" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#eaf0f8" font-weight="600">Application</text>
+  <text x="528" y="104" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#8fa3b8">optional app-layer</text>
+  <text x="528" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">mitigation</text>
+  <text x="528" y="131" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#536070">semantic-aware</text>
+
+  <!-- Arrow → Server -->
+  <line x1="599" y1="97" x2="634" y2="97" stroke="#3fb950" stroke-width="1.8" marker-end="url(#sa-g)"/>
+
+  <!-- Server -->
+  <rect x="636" y="68" width="100" height="58" rx="8" fill="#0d1a28" stroke="#2a3a50" stroke-width="1.2"/>
+  <text x="686" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#eaf0f8" font-weight="600">Server</text>
+  <text x="686" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="#3fb950">✓ protected</text>
+</svg>

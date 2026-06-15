@@ -26,6 +26,9 @@ permalink: /publications/
       <div class="pub-authors">
         <strong>Sophia Yoo</strong>, Xiaoqi Chen, Jennifer Rexford
       </div>
+      <div class="pub-figure">
+        <img src="/assets/img/papers/smartcookie.svg" alt="SmartCookie architecture: split-proxy P4 switch + software proxy">
+      </div>
       <div class="pub-links">
         <a href="/documents/SmartCookie_Paper_USENIXSec24.pdf"
            class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
@@ -50,6 +53,9 @@ permalink: /publications/
         <strong>Sophia Yoo*</strong>, Jiarong Xing*, Xenofon Foukas, Daehyeok Kim, Michael K. Reiter
         <br><small>*co-first authors</small>
       </div>
+      <div class="pub-figure">
+        <img src="/assets/img/papers/fronthaul.svg" alt="5G fronthaul architecture showing the unprotected eCPRI link between O-RU and O-DU">
+      </div>
       <div class="pub-links">
         <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf"
            class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
@@ -64,6 +70,9 @@ permalink: /publications/
       </div>
       <div class="pub-authors">
         Henry Birge-Lee, <strong>Sophia Yoo</strong>, Benjamin Herber, Jennifer Rexford, Maria Apostolaki
+      </div>
+      <div class="pub-figure">
+        <img src="/assets/img/papers/tango.svg" alt="TANGO collaborative route control: cooperating ASes selecting safe BGP paths">
       </div>
       <div class="pub-links">
         <a href="/documents/Tango_Paper_NSDI24.pdf"
@@ -86,6 +95,9 @@ permalink: /publications/
       </div>
       <div class="pub-authors">
         <strong>Sophia Yoo</strong>, Satadal Sengupta, Maria Apostolaki, Jennifer Rexford
+      </div>
+      <div class="pub-figure">
+        <img src="/assets/img/papers/sieve.svg" alt="Sieve layered defense pipeline: P4 hardware → software proxy → application">
       </div>
       <div class="pub-links">
         <a href="/documents/Sieve_Paper_P4Workshop23.pdf"
@@ -133,6 +145,9 @@ permalink: /publications/
       </div>
       <div class="pub-authors">
         <strong>Sophia Yoo</strong>, Xiaoqi Chen
+      </div>
+      <div class="pub-figure">
+        <img src="/assets/img/papers/siphash.svg" alt="SipHash unrolled across P4 match-action pipeline stages">
       </div>
       <div class="pub-links">
         <a href="/documents/SipID_Paper_SPIN21.pdf"

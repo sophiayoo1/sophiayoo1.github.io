@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="760" height="180">
+  <defs>
+    <marker id="fa" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#4da6ff"/>
+    </marker>
+    <marker id="fa-r" markerWidth="7" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#f85149"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="380" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#536070" letter-spacing="0.06em">5G FRONTHAUL ARCHITECTURE &amp; VULNERABILITY</text>
+
+  <!-- UE / Phone -->
+  <rect x="28" y="65" width="80" height="52" rx="7" fill="#0d1a28" stroke="#2a3a50" stroke-width="1.2"/>
+  <text x="68" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#eaf0f8" font-weight="600">UE</text>
+  <text x="68" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">5G device</text>
+  <!-- Air interface -->
+  <line x1="109" y1="91" x2="134" y2="91" stroke="#4da6ff" stroke-width="1.5" marker-end="url(#fa)"/>
+  <text x="121" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#4da6ff">NR</text>
+
+  <!-- O-RU -->
+  <rect x="136" y="55" width="100" height="72" rx="8" fill="#0d1a28" stroke="#4da6ff" stroke-width="1.5"/>
+  <text x="186" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#4da6ff" font-weight="700">O-RU</text>
+  <text x="186" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">Radio Unit</text>
+  <text x="186" y="107" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#8fa3b8">antenna site</text>
+  <text x="186" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#536070">(untrusted loc.)</text>
+
+  <!-- Fronthaul link (vulnerable) -->
+  <rect x="248" y="72" width="166" height="38" rx="5" fill="#1a0808" stroke="#f85149" stroke-width="1.5"/>
+  <text x="331" y="87" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#f85149" font-weight="700">Open Fronthaul</text>
+  <text x="331" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#f85149">(eCPRI — no integrity!)</text>
+  <!-- arrows -->
+  <line x1="237" y1="91" x2="246" y2="91" stroke="#f85149" stroke-width="1.5" marker-end="url(#fa-r)"/>
+  <line x1="415" y1="91" x2="424" y2="91" stroke="#f85149" stroke-width="1.5" marker-end="url(#fa-r)"/>
+
+  <!-- O-DU -->
+  <rect x="426" y="55" width="100" height="72" rx="8" fill="#0d1a28" stroke="#4da6ff" stroke-width="1.5"/>
+  <text x="476" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#4da6ff" font-weight="700">O-DU</text>
+  <text x="476" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">Distributed Unit</text>
+  <text x="476" y="107" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#8fa3b8">baseband proc.</text>
+  <text x="476" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#3fb950">(trusted)</text>
+
+  <!-- Attacker wedge -->
+  <line x1="331" y1="110" x2="331" y2="138" stroke="#f85149" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#fa-r)"/>
+  <rect x="268" y="140" width="126" height="30" rx="5" fill="#1a0808" stroke="#f85149" stroke-width="1"/>
+  <text x="331" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#f85149" font-weight="600">⚡ Attacker (co-located)</text>
+
+  <!-- 5G Core -->
+  <line x1="527" y1="91" x2="556" y2="91" stroke="#4da6ff" stroke-width="1.5" marker-end="url(#fa)"/>
+  <rect x="558" y="62" width="160" height="58" rx="8" fill="#0d1a28" stroke="#2a3a50" stroke-width="1.2"/>
+  <text x="638" y="84" text-anchor="middle" font-family="Inter,sans-serif" font-size="10.5" fill="#eaf0f8" font-weight="600">5G Core (5GC)</text>
+  <text x="638" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8fa3b8">backhaul, control plane</text>
+  <text x="638" y="113" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#8fa3b8">fully integrity-protected</text>
+</svg>
