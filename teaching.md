@@ -102,4 +102,79 @@ permalink: /teaching/
     </div>
   </section>
 
+  <!-- Mentoring -->
+  <section class="section">
+    <h2 class="section-label">Mentoring &amp; Advising</h2>
+    <div class="mentee-list">
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Sofia Marina</span>
+          <span class="mentee-type">Independent Work</span>
+          <span class="mentee-year">2025–2026</span>
+        </div>
+        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-project">Path Splitting Against Transformer-Based Website Fingerprinting</div>
+        <div class="mentee-advisors">Co-advised with Maria Apostolaki</div>
+        <div class="mentee-outcome-award">Nominated for Princeton Best Overall Senior Project Prize</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Veronika Kitsul</span>
+          <span class="mentee-type">Senior Thesis</span>
+          <span class="mentee-year">2025–2026</span>
+        </div>
+        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-project">Application- and Network-Level Characterization of ChatGPT Traffic</div>
+        <div class="mentee-advisors">Co-advised with Jennifer Rexford, Satadal Sengupta, and Hossein Valavi</div>
+        <div class="mentee-outcome">PhD at the University of Michigan</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Cynthia Zhang</span>
+          <span class="mentee-type">Independent Work</span>
+          <span class="mentee-year">2024–2025</span>
+        </div>
+        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-project">Tiered, Scalable, Privacy-Preserving Stateful Firewall Design</div>
+        <div class="mentee-advisors">Co-advised with Jennifer Rexford</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Benjamin Herber</span>
+          <span class="mentee-type">Senior Thesis &amp; Master's</span>
+          <span class="mentee-year">2022–2024</span>
+        </div>
+        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-project">TANGO: Secure Collaborative Route Control across the Public Internet</div>
+        <div class="mentee-advisors">Co-advised with Maria Apostolaki</div>
+        <div class="mentee-outcome-award">NSDI 2024 &middot; IETF/IRTF Applied Networking Research Prize 2025</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Kenneth Poor &amp; Esha Bhatia</span>
+          <span class="mentee-type">REU</span>
+          <span class="mentee-year">Summer 2022</span>
+        </div>
+        <div class="mentee-where">Princeton University (Poor) &middot; MIT (Bhatia) &middot; Princeton/Intel REU Program</div>
+        <div class="mentee-project">Programmable-Switch DDoS Defenses</div>
+        <div class="mentee-advisors">Co-mentored with Jennifer Rexford</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Princeton Pre-Application Support Program</span>
+          <span class="mentee-type">PhD Mentoring</span>
+          <span class="mentee-year">2021–2023</span>
+        </div>
+        <div class="mentee-project">Mentored prospective PhD applicants from underrepresented backgrounds on personal statements, application strategy, and research narratives across two admission cycles</div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
