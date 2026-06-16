@@ -70,7 +70,7 @@ em     { font-style: italic; }
 .nav-logo:hover { color: var(--text); text-decoration: none; background: var(--bg-surface); }
 .nav-avatar {
   width: 28px; height: 28px; border-radius: 50%;
-  object-fit: cover; object-position: center 55%;
+  object-fit: cover; object-position: center 20%;
   border: 1.5px solid var(--border-muted);
   flex-shrink: 0;
 }
@@ -92,7 +92,7 @@ em     { font-style: italic; }
 
 .hero-avatar {
   width: 190px; height: 190px; border-radius: 50%;
-  object-fit: cover; object-position: center 55%;
+  object-fit: cover; object-position: center 20%;
   flex-shrink: 0;
   border: 2px solid var(--border-muted);
   box-shadow: 0 0 0 6px rgba(77,166,255,0.07), 0 8px 32px rgba(0,0,0,0.5);
