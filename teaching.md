@@ -121,18 +121,6 @@ permalink: /teaching/
 
       <div class="mentee-item">
         <div class="mentee-header">
-          <span class="mentee-name">Veronika Kitsul</span>
-          <span class="mentee-type">Senior Thesis</span>
-          <span class="mentee-year">2025–2026</span>
-        </div>
-        <div class="mentee-where">Princeton University</div>
-        <div class="mentee-project">Application- and Network-Level Characterization of ChatGPT Traffic</div>
-        <div class="mentee-advisors">Co-advised with Jennifer Rexford, Satadal Sengupta, and Hossein Valavi</div>
-        <div class="mentee-outcome">Entering PhD program at the University of Michigan</div>
-      </div>
-
-      <div class="mentee-item">
-        <div class="mentee-header">
           <span class="mentee-name">Cynthia Zhang</span>
           <span class="mentee-type">Independent Work</span>
           <span class="mentee-year">Spring 2026</span>
@@ -141,6 +129,18 @@ permalink: /teaching/
         <div class="mentee-project">Tiered, Scalable, Privacy-Preserving Stateful Firewall Design</div>
         <div class="mentee-advisors">Co-advised with Jennifer Rexford</div>
         <div class="mentee-outcome">Completed first independent research project</div>
+      </div>
+
+      <div class="mentee-item">
+        <div class="mentee-header">
+          <span class="mentee-name">Veronika Kitsul</span>
+          <span class="mentee-type">Senior Thesis</span>
+          <span class="mentee-year">2025–2026</span>
+        </div>
+        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-project">Application- and Network-Level Characterization of ChatGPT Traffic</div>
+        <div class="mentee-advisors">Co-advised with Jennifer Rexford, Satadal Sengupta, and Hossein Valavi</div>
+        <div class="mentee-outcome">Entering PhD program at the University of Michigan</div>
       </div>
 
       <div class="mentee-item">
