@@ -137,9 +137,10 @@ permalink: /teaching/
           <span class="mentee-type">Independent Work</span>
           <span class="mentee-year">2024–2025</span>
         </div>
-        <div class="mentee-where">Princeton University</div>
+        <div class="mentee-where">Princeton University &middot; Junior, no prior research experience</div>
         <div class="mentee-project">Tiered, Scalable, Privacy-Preserving Stateful Firewall Design</div>
         <div class="mentee-advisors">Co-advised with Jennifer Rexford</div>
+        <div class="mentee-outcome">Completed first independent research project, from problem formulation through system design</div>
       </div>
 
       <div class="mentee-item">
@@ -160,7 +161,7 @@ permalink: /teaching/
           <span class="mentee-type">REU</span>
           <span class="mentee-year">Summer 2022</span>
         </div>
-        <div class="mentee-where">Princeton University (Poor) &middot; MIT (Bhatia) &middot; Princeton/Intel REU Program</div>
+        <div class="mentee-where">Princeton University (Poor) &middot; MIT (Bhatia) &middot; Princeton/Intel REU Program &middot; Rising juniors</div>
         <div class="mentee-project">Programmable-Switch DDoS Defenses</div>
         <div class="mentee-advisors">Co-mentored with Jennifer Rexford</div>
       </div>
