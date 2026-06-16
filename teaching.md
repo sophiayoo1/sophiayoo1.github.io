@@ -116,7 +116,7 @@ permalink: /teaching/
         <div class="mentee-where">Princeton University</div>
         <div class="mentee-project">Path Splitting Against Transformer-Based Website Fingerprinting</div>
         <div class="mentee-advisors">Co-advised with Maria Apostolaki</div>
-        <div class="mentee-outcome-award">Nominated for Princeton Best Overall Senior Project Prize</div>
+        <div class="mentee-outcome">Nominated for Princeton Best Overall Senior Project Prize</div>
       </div>
 
       <div class="mentee-item">
@@ -152,7 +152,7 @@ permalink: /teaching/
         <div class="mentee-where">Princeton University</div>
         <div class="mentee-project">TANGO: Secure Collaborative Route Control across the Public Internet</div>
         <div class="mentee-advisors">Co-advised with Maria Apostolaki</div>
-        <div class="mentee-outcome-award">NSDI 2024 &middot; IETF/IRTF Applied Networking Research Prize 2025</div>
+        <div class="mentee-outcome">NSDI 2024 &middot; IETF/IRTF Applied Networking Research Prize 2025</div>
       </div>
 
       <div class="mentee-item">
