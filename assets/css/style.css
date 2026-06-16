@@ -338,7 +338,14 @@ em     { font-style: italic; }
   border-color: var(--accent); color: var(--accent);
   background: var(--accent-bg); text-decoration: none;
 }
-.pub-award { font-size: 0.78rem; color: var(--gold); margin-top: 8px; font-weight: 500; }
+.pub-award {
+  display: inline-flex; align-items: center;
+  font-size: 0.64rem; font-weight: 700; padding: 3px 8px;
+  border-radius: 4px; letter-spacing: 0.03em;
+  margin-top: 10px;
+  background: rgba(240,180,41,0.12); color: var(--gold);
+  border: 1px solid rgba(240,180,41,0.3);
+}
 .pub-award::before { content: '★ '; }
 .pub-notes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pub-note-badge {
