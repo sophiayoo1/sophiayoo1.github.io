@@ -327,6 +327,7 @@ em     { font-style: italic; }
 }
 .pub-note  { font-size: 0.78rem; color: var(--text-subtle); margin-top: 10px; font-style: italic; }
 .pub-award { font-size: 0.78rem; color: var(--gold); margin-top: 8px; font-weight: 500; }
+.pub-award::before { content: '★ '; }
 
 /* Mobile: stack */
 @media (max-width: 700px) {
