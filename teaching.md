@@ -128,7 +128,7 @@ permalink: /teaching/
         <div class="mentee-where">Princeton University</div>
         <div class="mentee-project">Application- and Network-Level Characterization of ChatGPT Traffic</div>
         <div class="mentee-advisors">Co-advised with Jennifer Rexford, Satadal Sengupta, and Hossein Valavi</div>
-        <div class="mentee-outcome">PhD at the University of Michigan</div>
+        <div class="mentee-outcome">Entering PhD program at the University of Michigan</div>
       </div>
 
       <div class="mentee-item">
@@ -137,10 +137,10 @@ permalink: /teaching/
           <span class="mentee-type">Independent Work</span>
           <span class="mentee-year">Spring 2026</span>
         </div>
-        <div class="mentee-where">Princeton University &middot; Junior, no prior research experience</div>
+        <div class="mentee-where">Princeton University &middot; Junior, first research project</div>
         <div class="mentee-project">Tiered, Scalable, Privacy-Preserving Stateful Firewall Design</div>
         <div class="mentee-advisors">Co-advised with Jennifer Rexford</div>
-        <div class="mentee-outcome">Completed first independent research project, from problem formulation through system design</div>
+        <div class="mentee-outcome">Completed first independent research project</div>
       </div>
 
       <div class="mentee-item">
@@ -161,18 +161,19 @@ permalink: /teaching/
           <span class="mentee-type">REU</span>
           <span class="mentee-year">Summer 2022</span>
         </div>
-        <div class="mentee-where">Princeton University (Poor) &middot; MIT (Bhatia) &middot; Princeton/Intel REU Program &middot; Rising juniors</div>
+        <div class="mentee-where">Princeton/Intel REU Program &middot; Rising juniors</div>
         <div class="mentee-project">Programmable-Switch DDoS Defenses</div>
-        <div class="mentee-advisors">Co-mentored with Jennifer Rexford</div>
+        <div class="mentee-advisors">Poor (Princeton University) &middot; Bhatia (MIT) &middot; Co-mentored with Jennifer Rexford</div>
       </div>
 
       <div class="mentee-item">
         <div class="mentee-header">
-          <span class="mentee-name">Princeton Pre-Application Support Program</span>
-          <span class="mentee-type">PhD Mentoring</span>
+          <span class="mentee-name">Princeton PASP</span>
+          <span class="mentee-type">Program Mentoring</span>
           <span class="mentee-year">2021–2023</span>
         </div>
-        <div class="mentee-project">Mentored prospective PhD applicants from underrepresented backgrounds on personal statements, application strategy, and research narratives across two admission cycles</div>
+        <div class="mentee-where">Pre-Application Support Program, Princeton University</div>
+        <div class="mentee-project">Coaching underrepresented PhD applicants on personal statements, application strategy, and research narrative — two admission cycles</div>
       </div>
 
     </div>
