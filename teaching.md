@@ -111,7 +111,7 @@ permalink: /teaching/
         <div class="mentee-header">
           <span class="mentee-name">Sofia Marina</span>
           <span class="mentee-type">Independent Work</span>
-          <span class="mentee-year">2025–2026</span>
+          <span class="mentee-year">Spring 2026</span>
         </div>
         <div class="mentee-where">Princeton University</div>
         <div class="mentee-project">Path Splitting Against Transformer-Based Website Fingerprinting</div>
@@ -135,7 +135,7 @@ permalink: /teaching/
         <div class="mentee-header">
           <span class="mentee-name">Cynthia Zhang</span>
           <span class="mentee-type">Independent Work</span>
-          <span class="mentee-year">2024–2025</span>
+          <span class="mentee-year">Spring 2026</span>
         </div>
         <div class="mentee-where">Princeton University &middot; Junior, no prior research experience</div>
         <div class="mentee-project">Tiered, Scalable, Privacy-Preserving Stateful Firewall Design</div>
@@ -147,7 +147,7 @@ permalink: /teaching/
         <div class="mentee-header">
           <span class="mentee-name">Benjamin Herber</span>
           <span class="mentee-type">Senior Thesis &amp; Master's</span>
-          <span class="mentee-year">2022–2024</span>
+          <span class="mentee-year">Spring 2023–Spring 2024</span>
         </div>
         <div class="mentee-where">Princeton University</div>
         <div class="mentee-project">TANGO: Secure Collaborative Route Control across the Public Internet</div>
