@@ -175,6 +175,7 @@ em     { font-style: italic; }
 
 .news-badge {
   display: inline-block; flex-shrink: 0;
+  min-width: 90px; text-align: center;
   font-size: 0.62rem; font-weight: 700; padding: 3px 8px;
   border-radius: 4px; letter-spacing: 0.07em; text-transform: uppercase;
   margin-top: 2px; white-space: nowrap;
