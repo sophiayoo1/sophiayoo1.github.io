@@ -70,7 +70,7 @@ em     { font-style: italic; }
 .nav-logo:hover { color: var(--text); text-decoration: none; background: var(--bg-surface); }
 .nav-avatar {
   width: 28px; height: 28px; border-radius: 50%;
-  object-fit: cover; object-position: center 20%;
+  object-fit: cover; object-position: center 15%;
   border: 1.5px solid var(--border-muted);
   flex-shrink: 0;
 }
