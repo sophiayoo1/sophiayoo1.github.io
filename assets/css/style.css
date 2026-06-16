@@ -209,6 +209,7 @@ em     { font-style: italic; }
 .news-headline { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 2px; line-height: 1.4; }
 .news-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 .news-desc a { color: var(--accent); }
+.news-date { font-size: 0.78rem; color: var(--text-subtle); white-space: nowrap; flex-shrink: 0; padding-top: 3px; }
 
 /* ============================================================
    FEATURED PUB GRID  (home page)
