@@ -37,7 +37,10 @@ permalink: /publications/
           <a href="https://www.youtube.com/embed/oNi_4wCo9Gg?si=2YLaf0dpxxprv_WW" class="pub-link" target="_blank" rel="noopener">Demo Video</a>
           <a href="https://github.com/Princeton-Cabernet/p4-projects/tree/master/SmartCookie" class="pub-link" target="_blank" rel="noopener">P4 Code</a>
         </div>
-        <div class="pub-note">NSF GRFP funded &middot; Patent pending</div>
+        <div class="pub-notes">
+          <span class="pub-note-badge pub-note-funding">NSF GRFP funded</span>
+          <span class="pub-note-badge pub-note-patent">Patent pending</span>
+        </div>
       </div>
     </div>
 
@@ -57,7 +60,10 @@ permalink: /publications/
         <div class="pub-links">
           <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
         </div>
-        <div class="pub-note">With Microsoft Research &middot; Patent pending</div>
+        <div class="pub-notes">
+          <span class="pub-note-badge pub-note-collab">With Microsoft Research</span>
+          <span class="pub-note-badge pub-note-patent">Patent pending</span>
+        </div>
       </div>
     </div>
 
