@@ -111,6 +111,9 @@ permalink: /publications/
     <div class="pub-year">2022</div>
 
     <div class="pub-card" id="smartcookie-poster">
+      <div class="pub-figure">
+        <img src="/assets/img/papers/smartcookie_poster.jpg" alt="SmartCookie poster">
+      </div>
       <div class="pub-content">
         <span class="pub-venue">Princeton Research Day 2022 (Poster)</span>
         <div class="pub-title">

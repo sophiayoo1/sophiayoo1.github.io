@@ -29,22 +29,13 @@ permalink: /teaching/
       </div>
 
       <div class="course-card">
-        <div class="course-code">COSC-275 &middot; Fall 2026, Spring 2027</div>
+        <div class="course-code">COSC-275 &middot; Fall 2026</div>
         <div class="course-name">Systems II: Operating Systems</div>
         <div class="course-meta">
           Core systems course covering operating system design and implementation:
           processes, threads, scheduling, memory management, file systems, and I/O.
-          Emphasis on systems programming in C and the interface between hardware and software.
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-code">Research Seminar &middot; Spring 2027</div>
-        <div class="course-name">Research Seminar in Computer Networks</div>
-        <div class="course-meta">
-          A reading and research seminar covering landmark and recent papers in networked systems,
-          network security, and programmable data planes. Students present papers, lead discussions,
-          and pursue an independent research project.
+          Emphasis on systems programming in C and the interface between hardware and software.<br>
+          <em>Co-taught with <a href="https://sfkaplan.people.amherst.edu/" target="_blank" rel="noopener">Scott Kaplan</a>.</em>
         </div>
       </div>
 

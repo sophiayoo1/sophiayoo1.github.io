@@ -242,8 +242,14 @@ em     { font-style: italic; }
 }
 .pub-featured-authors { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px; line-height: 1.4; }
 .pub-featured-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
-.pub-featured-note  { font-size: 0.73rem; color: var(--text-subtle); margin-top: 7px; font-style: italic; }
-.pub-featured-award { font-size: 0.73rem; color: var(--gold); margin-top: 7px; font-weight: 500; }
+.pub-featured-note  { font-size: 0.71rem; color: var(--text-subtle); margin-top: 7px; font-style: italic; }
+.pub-featured-award {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.67rem; font-weight: 700; padding: 3px 9px;
+  border-radius: 4px; margin-top: 8px; align-self: flex-start;
+  background: rgba(240,180,41,0.14); color: var(--gold);
+  border: 1px solid rgba(240,180,41,0.38); letter-spacing: 0.02em;
+}
 
 /* ============================================================
    PUBLICATION CARDS  (publications page)
@@ -416,11 +422,11 @@ em     { font-style: italic; }
 /* Patent pop in featured cards */
 .pub-featured-patent {
   display: inline-flex; align-items: center; gap: 5px;
-  font-size: 0.7rem; font-weight: 600; padding: 3px 9px;
-  border-radius: 4px; margin-top: 7px;
-  background: rgba(167,139,250,0.1); color: var(--purple);
-  border: 1px solid rgba(167,139,250,0.3);
-  letter-spacing: 0.04em;
+  font-size: 0.67rem; font-weight: 700; padding: 3px 9px;
+  border-radius: 4px; margin-top: 8px; align-self: flex-start;
+  background: rgba(167,139,250,0.18); color: #c4b5fd;
+  border: 1px solid rgba(167,139,250,0.45);
+  letter-spacing: 0.03em;
 }
 .pub-featured-patent::before { content: '⊕ '; }
 
