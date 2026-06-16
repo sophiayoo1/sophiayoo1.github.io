@@ -110,9 +110,16 @@ em     { font-style: italic; }
   background: linear-gradient(130deg, #edf2fa 0%, #9ec8ff 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.hero-role { font-size: 0.975rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; }
+.hero-role { font-size: 0.975rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
 .hero-role a { color: var(--text-muted); }
 .hero-role a:hover { color: var(--accent); }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.hero-tag {
+  font-size: 0.63rem; font-weight: 600; padding: 3px 10px;
+  border-radius: 20px; letter-spacing: 0.03em;
+  background: rgba(77,166,255,0.08); color: var(--accent);
+  border: 1px solid rgba(77,166,255,0.2);
+}
 .hero-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .hero-link {
   display: inline-flex; align-items: center; gap: 5px;

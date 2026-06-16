@@ -34,6 +34,7 @@ permalink: /publications/
           <a href="/documents/SmartCookie_Paper_USENIXSec24.pdf"   class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
           <a href="/documents/SmartCookie_Artifact_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Artifact</a>
           <a href="/documents/SmartCookie_Slides_USENIXSec24.pdf"  class="pub-link" target="_blank" rel="noopener">Slides</a>
+          <a href="https://www.youtube.com/embed/GbV1LZhpY8o" class="pub-link" target="_blank" rel="noopener">Talk</a>
           <a href="https://www.youtube.com/embed/oNi_4wCo9Gg?si=2YLaf0dpxxprv_WW" class="pub-link" target="_blank" rel="noopener">Demo Video</a>
           <a href="https://github.com/Princeton-Cabernet/p4-projects/tree/master/SmartCookie" class="pub-link" target="_blank" rel="noopener">P4 Code</a>
         </div>
@@ -59,6 +60,7 @@ permalink: /publications/
         </div>
         <div class="pub-links">
           <a href="/documents/FronthaulSecurity_Paper_USENIXSec24.pdf" class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
+          <a href="https://www.youtube.com/embed/EhC-pYTVncg" class="pub-link" target="_blank" rel="noopener">Talk</a>
         </div>
         <div class="pub-notes">
           <span class="pub-note-badge pub-note-collab">With Microsoft Research</span>
@@ -82,6 +84,7 @@ permalink: /publications/
         <div class="pub-links">
           <a href="/documents/Tango_Paper_NSDI24.pdf"   class="pub-link" target="_blank" rel="noopener">Paper (PDF)</a>
           <a href="/documents/Tango_Slides_NSDI24.pdf"  class="pub-link" target="_blank" rel="noopener">Slides</a>
+          <a href="https://www.youtube.com/embed/Rlrfov4FlKM" class="pub-link" target="_blank" rel="noopener">Talk</a>
         </div>
         <div class="pub-award">IETF/IRTF Applied Networking Research Prize</div>
       </div>
