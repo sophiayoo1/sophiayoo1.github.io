@@ -178,7 +178,6 @@ permalink: /research/
       <div class="rproject-card" id="r-praxiguard">
         <div class="rproject-name">PraxiGuard</div>
         <div class="rproject-chips">
-          <span class="venue-chip">Under submission &middot; USENIX Security 2026</span>
           <span class="venue-chip-gold">Wallace Memorial Fellowship</span>
         </div>
         <p class="rproject-desc">
